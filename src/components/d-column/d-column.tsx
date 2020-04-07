@@ -1,5 +1,6 @@
 import { Component, ComponentInterface, Host, h, Prop } from "@stencil/core";
-import { FlexJustifyContent } from "../../util/justify-content.type";
+import { JustifyContentType } from "../../util/justify-content.type";
+import { AlignItemsType } from "../../util/align-items.type";
 
 @Component({
   tag: "d-column",
@@ -7,7 +8,8 @@ import { FlexJustifyContent } from "../../util/justify-content.type";
   shadow: true,
 })
 export class DColumn implements ComponentInterface {
-  @Prop() justifyContent: FlexJustifyContent;
+  @Prop() justifyContent: JustifyContentType;
+  @Prop() alignItems: AlignItemsType;
 
   render() {
     return (

@@ -1,4 +1,4 @@
-export type FlexJustifyContent =
+export type JustifyContentType =
   | "flex-start"
   | "flex-end"
   | "center"

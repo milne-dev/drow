@@ -5,13 +5,16 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { FlexJustifyContent } from "./util/justify-content.type";
+import { JustifyContentType } from "./util/justify-content.type";
+import { AlignItemsType } from "./util/align-items.type";
 export namespace Components {
   interface DColumn {
-    justifyContent: FlexJustifyContent;
+    alignItems: AlignItemsType;
+    justifyContent: JustifyContentType;
   }
   interface DRow {
-    justifyContent: FlexJustifyContent;
+    alignItems: AlignItemsType;
+    justifyContent: JustifyContentType;
   }
 }
 declare global {
@@ -32,10 +35,12 @@ declare global {
 }
 declare namespace LocalJSX {
   interface DColumn {
-    justifyContent?: FlexJustifyContent;
+    alignItems?: AlignItemsType;
+    justifyContent?: JustifyContentType;
   }
   interface DRow {
-    justifyContent?: FlexJustifyContent;
+    alignItems?: AlignItemsType;
+    justifyContent?: JustifyContentType;
   }
   interface IntrinsicElements {
     "d-column": DColumn;
