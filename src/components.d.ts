@@ -5,9 +5,14 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { FlexJustifyContent } from "./util/justify-content.type";
 export namespace Components {
-  interface DColumn {}
-  interface DRow {}
+  interface DColumn {
+    justifyContent: FlexJustifyContent;
+  }
+  interface DRow {
+    justifyContent: FlexJustifyContent;
+  }
 }
 declare global {
   interface HTMLDColumnElement extends Components.DColumn, HTMLStencilElement {}
@@ -26,8 +31,12 @@ declare global {
   }
 }
 declare namespace LocalJSX {
-  interface DColumn {}
-  interface DRow {}
+  interface DColumn {
+    justifyContent?: FlexJustifyContent;
+  }
+  interface DRow {
+    justifyContent?: FlexJustifyContent;
+  }
   interface IntrinsicElements {
     "d-column": DColumn;
     "d-row": DRow;
