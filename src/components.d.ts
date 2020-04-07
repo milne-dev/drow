@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+  interface DRow {}
   interface MyComponent {
     /**
      * The first name
@@ -22,6 +23,11 @@ export namespace Components {
   }
 }
 declare global {
+  interface HTMLDRowElement extends Components.DRow, HTMLStencilElement {}
+  var HTMLDRowElement: {
+    prototype: HTMLDRowElement;
+    new (): HTMLDRowElement;
+  };
   interface HTMLMyComponentElement
     extends Components.MyComponent,
       HTMLStencilElement {}
@@ -30,10 +36,12 @@ declare global {
     new (): HTMLMyComponentElement;
   };
   interface HTMLElementTagNameMap {
+    "d-row": HTMLDRowElement;
     "my-component": HTMLMyComponentElement;
   }
 }
 declare namespace LocalJSX {
+  interface DRow {}
   interface MyComponent {
     /**
      * The first name
@@ -49,6 +57,7 @@ declare namespace LocalJSX {
     middle?: string;
   }
   interface IntrinsicElements {
+    "d-row": DRow;
     "my-component": MyComponent;
   }
 }
@@ -56,6 +65,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      "d-row": LocalJSX.DRow & JSXBase.HTMLAttributes<HTMLDRowElement>;
       "my-component": LocalJSX.MyComponent &
         JSXBase.HTMLAttributes<HTMLMyComponentElement>;
     }

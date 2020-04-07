@@ -9,11 +9,7 @@ describe("d-row", () => {
     });
     expect(root).toEqualHtml(`
       <d-row>
-        <mock:shadow-root>
-          <div>
-            Hello, World! I'm
-          </div>
-        </mock:shadow-root>
+        <mock:shadow-root></mock:shadow-root>
       </d-row>
     `);
   });
