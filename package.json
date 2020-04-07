@@ -15,7 +15,7 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build": "stencil build --docs && ./node_modules/.bin/prettier --write ./src/",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e && ./node_modules/.bin/prettier --write ./src/",
     "test.watch": "stencil test --spec --e2e --watchAll",
