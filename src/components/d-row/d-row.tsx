@@ -1,4 +1,5 @@
-import { Component, ComponentInterface, Host, h } from "@stencil/core";
+import { Component, ComponentInterface, Host, h, Prop } from "@stencil/core";
+import { FlexJustifyContent } from "../../util/justify-content.type";
 
 @Component({
   tag: "d-row",
@@ -6,9 +7,11 @@ import { Component, ComponentInterface, Host, h } from "@stencil/core";
   shadow: true,
 })
 export class DRow implements ComponentInterface {
+  @Prop() justifyContent: FlexJustifyContent;
+
   render() {
     return (
-      <Host>
+      <Host style={{ "justify-content": this.justifyContent }}>
         <slot></slot>
       </Host>
     );
