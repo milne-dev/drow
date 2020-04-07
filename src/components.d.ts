@@ -6,32 +6,39 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface DRow {
-    }
+  interface DColumn {}
+  interface DRow {}
 }
 declare global {
-    interface HTMLDRowElement extends Components.DRow, HTMLStencilElement {
-    }
-    var HTMLDRowElement: {
-        prototype: HTMLDRowElement;
-        new (): HTMLDRowElement;
-    };
-    interface HTMLElementTagNameMap {
-        "d-row": HTMLDRowElement;
-    }
+  interface HTMLDColumnElement extends Components.DColumn, HTMLStencilElement {}
+  var HTMLDColumnElement: {
+    prototype: HTMLDColumnElement;
+    new (): HTMLDColumnElement;
+  };
+  interface HTMLDRowElement extends Components.DRow, HTMLStencilElement {}
+  var HTMLDRowElement: {
+    prototype: HTMLDRowElement;
+    new (): HTMLDRowElement;
+  };
+  interface HTMLElementTagNameMap {
+    "d-column": HTMLDColumnElement;
+    "d-row": HTMLDRowElement;
+  }
 }
 declare namespace LocalJSX {
-    interface DRow {
-    }
-    interface IntrinsicElements {
-        "d-row": DRow;
-    }
+  interface DColumn {}
+  interface DRow {}
+  interface IntrinsicElements {
+    "d-column": DColumn;
+    "d-row": DRow;
+  }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
-    export namespace JSX {
-        interface IntrinsicElements {
-            "d-row": LocalJSX.DRow & JSXBase.HTMLAttributes<HTMLDRowElement>;
-        }
+  export namespace JSX {
+    interface IntrinsicElements {
+      "d-column": LocalJSX.DColumn & JSXBase.HTMLAttributes<HTMLDColumnElement>;
+      "d-row": LocalJSX.DRow & JSXBase.HTMLAttributes<HTMLDRowElement>;
     }
+  }
 }

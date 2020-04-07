@@ -1,11 +1,11 @@
 import { Component, ComponentInterface, Host, h } from "@stencil/core";
 
 @Component({
-  tag: "d-row",
-  styleUrl: "d-row.css",
+  tag: "d-column",
+  styleUrl: "d-column.css",
   shadow: true,
 })
-export class DRow implements ComponentInterface {
+export class DColumn implements ComponentInterface {
   render() {
     return (
       <Host>

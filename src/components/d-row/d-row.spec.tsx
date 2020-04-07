@@ -3,13 +3,15 @@ import { DRow } from "./d-row";
 
 describe("d-row", () => {
   it("renders", async () => {
-    const { root } = await newSpecPage({
+    const page = await newSpecPage({
       components: [DRow],
-      html: "<d-row></d-row>",
+      html: `<d-row></d-row>`,
     });
-    expect(root).toEqualHtml(`
+    expect(page.root).toEqualHtml(`
       <d-row>
-        <mock:shadow-root></mock:shadow-root>
+        <mock:shadow-root>
+          <slot></slot>
+        </mock:shadow-root>
       </d-row>
     `);
   });
