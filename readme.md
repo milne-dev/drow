@@ -9,6 +9,6 @@
 ## Install
 
 - Run `npm install drow`
-- Put `<script src='node_modules/drow/dist/drow.js'></script>` in the head of your index.html
+- Add `<script src='node_modules/drow/dist/drow.js'></script>` to index.html
 
 
