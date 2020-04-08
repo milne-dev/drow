@@ -1,7 +1,7 @@
 {
   "name": "drow",
   "version": "0.0.4",
-  "description": "Stencil Component Starter",
+  "description": "Low level web component layout lib",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
